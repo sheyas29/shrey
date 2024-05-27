@@ -1,0 +1,123 @@
+Title,Genre,Platform,ReleaseYear,NumPlayers,AvgRating
+Super Mario Bros,Platformer,NES,1985,1,9.4
+The Legend of Zelda,Action-Adventure,NES,1986,1,9.2
+Minecraft,Sandbox,Multi-platform,2011,8,9.5
+Tetris,Puzzle,Multi-platform,1984,1,8.5
+Call of Duty: Modern Warfare,First-Person Shooter,Multi-platform,2007,16,8.9
+The Witcher 3: Wild Hunt,Action RPG,Multi-platform,2015,1,9.7
+Fortnite,Battle Royale,Multi-platform,2017,100,8.4
+God of War,Action-Adventure,PlayStation,2018,1,9.8
+League of Legends,MOBA,PC,2009,10,8.6
+Grand Theft Auto V,Action-Adventure,Multi-platform,2013,30,9.6
+Overwatch,First-Person Shooter,Multi-platform,2016,12,8.8
+Red Dead Redemption 2,Action-Adventure,Multi-platform,2018,32,9.7
+The Elder Scrolls V: Skyrim,Action RPG,Multi-platform,2011,1,9.3
+Super Smash Bros. Ultimate,Fighting,Switch,2018,8,9.2
+Among Us,Party,Multi-platform,2018,10,8.1
+Animal Crossing: New Horizons,Simulation,Switch,2020,4,9.1
+Cyberpunk 2077,Action RPG,Multi-platform,2020,1,7.8
+Halo: Combat Evolved,First-Person Shooter,Xbox,2001,16,9.0
+The Sims 4,Simulation,PC,2014,1,7.9
+Fall Guys: Ultimate Knockout,Party,Multi-platform,2020,60,8.3
+Super Mario Odyssey,Platformer,Switch,2017,1,9.7
+Celeste,Platformer,Multi-platform,2018,1,9.0
+Dark Souls III,Action RPG,Multi-platform,2016,1,9.3
+Stardew Valley,Simulation,Multi-platform,2016,4,9.2
+Hades,Rogue-like,Multi-platform,2020,1,9.5
+Apex Legends,Battle Royale,Multi-platform,2019,60,8.8
+Rocket League,Sports,Multi-platform,2015,8,9.1
+Final Fantasy VII Remake,JRPG,PlayStation,2020,1,8.9
+Persona 5,JRPG,PlayStation,2016,1,9.4
+DOOM Eternal,First-Person Shooter,Multi-platform,2020,1,9.1
+Splatoon 2,Shooter,Switch,2017,8,8.5
+Monster Hunter: World,Action RPG,Multi-platform,2018,4,9.0
+Bloodborne,Action RPG,PlayStation,2015,1,9.1
+Horizon Zero Dawn,Action RPG,PlayStation,2017,1,9.2
+The Last of Us Part II,Action-Adventure,PlayStation,2020,1,9.3
+Spider-Man,Action-Adventure,PlayStation,2018,1,9.0
+Fire Emblem: Three Houses,Strategy RPG,Switch,2019,1,9.2
+Xenoblade Chronicles 2,JRPG,Switch,2017,1,8.5
+Sekiro: Shadows Die Twice,Action-Adventure,Multi-platform,2019,1,9.4
+Resident Evil 2,Survival Horror,Multi-platform,2019,1,9.2
+Mortal Kombat 11,Fighting,Multi-platform,2019,2,8.3
+Assassin's Creed Valhalla,Action-Adventure,Multi-platform,2020,1,8.5
+Ghost of Tsushima,Action-Adventure,PlayStation,2020,1,9.3
+Control,Action-Adventure,Multi-platform,2019,1,8.4
+Luigi's Mansion 3,Action-Adventure,Switch,2019,1,8.7
+Cuphead,Platformer,Multi-platform,2017,2,8.6
+Gears 5,Third-Person Shooter,Xbox,2019,4,8.5
+FIFA 21,Sports,Multi-platform,2020,22,7.8
+NBA 2K21,Sports,Multi-platform,2020,10,7.4
+Valorant,First-Person Shooter,PC,2020,10,8.9
+Battlefield V,First-Person Shooter,Multi-platform,2018,64,7.5
+The Outer Worlds,Action RPG,Multi-platform,2019,1,8.4
+Dragon Quest XI,JRPG,Multi-platform,2017,1,9.0
+Dishonored 2,Action-Adventure,Multi-platform,2016,1,8.6
+Nioh 2,Action RPG,PlayStation,2020,2,8.8
+Crash Bandicoot N. Sane Trilogy,Platformer,Multi-platform,2017,1,8.5
+Devil May Cry 5,Action-Adventure,Multi-platform,2019,1,9.1
+Bayonetta 2,Action-Adventure,Switch,2014,1,9.2
+Astral Chain,Action-Adventure,Switch,2019,1,8.7
+Mario Kart 8 Deluxe,Racing,Switch,2017,12,9.4
+The Binding of Isaac: Rebirth,Rogue-like,Multi-platform,2014,1,8.9
+Forza Horizon 4,Racing,Xbox,2018,72,9.1
+Death Stranding,Action-Adventure,Multi-platform,2019,1,8.3
+No Man's Sky,Action-Adventure,Multi-platform,2016,1,7.5
+Pokemon Sword and Shield,RPG,Switch,2019,4,8.3
+Ring Fit Adventure,Fitness,Switch,2019,1,8.8
+Splatoon,Third-Person Shooter,Switch,2015,8,8.2
+Subnautica,Survival,Multi-platform,2018,1,8.9
+Terraria,Sandbox,Multi-platform,2011,8,9.2
+Borderlands 3,Action RPG,Multi-platform,2019,4,8.7
+Journey,Adventure,Multi-platform,2012,1,9.5
+Hollow Knight,Metroidvania,Multi-platform,2017,1,9.4
+Ori and the Will of the Wisps,Platformer,Multi-platform,2020,1,9.3
+Slay the Spire,Rogue-like,Multi-platform,2019,1,9.1
+Half-Life 2,First-Person Shooter,PC,2004,1,9.7
+Mass Effect 2,Action RPG,Multi-platform,2010,1,9.6
+Portal 2,Puzzle-Platformer,Multi-platform,2011,2,9.5
+The Last of Us,Action-Adventure,PlayStation,2013,1,9.8
+Metal Gear Solid V: The Phantom Pain,Action-Adventure,Multi-platform,2015,1,9.5
+BioShock,First-Person Shooter,Multi-platform,2007,1,9.5
+Dishonored,Action-Adventure,Multi-platform,2012,1,9.2
+Far Cry 3,First-Person Shooter,Multi-platform,2012,1,9.0
+Shadow of the Colossus,Action-Adventure,PlayStation,2005,1,9.6
+Bastion,Action RPG,Multi-platform,2011,1,8.9
+Horizon Forbidden West,Action RPG,PlayStation,2022,1,9.2
+Metroid Dread,Action-Adventure,Switch,2021,1,9.1
+Star Wars Jedi: Fallen Order,Action-Adventure,Multi-platform,2019,1,8.8
+Celeste,Platformer,Multi-platform,2018,1,9.0
+Hollow Knight: Silksong,Metroidvania,Multi-platform,2023,1,9.4
+Final Fantasy XIV,MMORPG,Multi-platform,2010,1,9.3
+Returnal,Rogue-like,PlayStation,2021,1,8.9
+Hitman 3,Stealth,Multi-platform,2021,1,8.8
+Control: Ultimate Edition,Action-Adventure,Multi-platform,2021,1,9.1
+The Stanley Parable,Interactive Story,PC,2013,1,8.8
+Hades II,Rogue-like,Multi-platform,2023,1,9.5
+Psychonauts 2,Platformer,Multi-platform,2021,1,8.7
+Marvel's Spider-Man: Miles Morales,Action-Adventure,PlayStation,2020,1,9.0
+Elden Ring,Action RPG,Multi-platform,2022,1,9.6
+Final Fantasy XVI,JRPG,PlayStation,2023,1,9.1
+Bayonetta 3,Action-Adventure,Switch,2022,1,9.0
+Cyberpunk 2088,Action RPG,Multi-platform,2023,1,8.4
+The Elder Scrolls VI,Action RPG,Multi-platform,2025,1,9.7
+Ghostrunner,Action,Multi-platform,2020,1,8.5
+Immortals Fenyx Rising,Action-Adventure,Multi-platform,2020,1,8.2
+It Takes Two,Platformer,Multi-platform,2021,2,9.3
+Kena: Bridge of Spirits,Action-Adventure,Multi-platform,2021,1,8.9
+Little Nightmares II,Adventure,Multi-platform,2021,1,8.6
+Monster Hunter Rise,Action RPG,Switch,2021,4,8.8
+Nier: Automata,Action RPG,Multi-platform,2017,1,9.3
+Ratchet & Clank: Rift Apart,Platformer,PlayStation,2021,1,9.2
+Resident Evil Village,Survival Horror,Multi-platform,2021,1,8.9
+Sable,Adventure,Multi-platform,2021,1,8.1
+Sackboy: A Big Adventure,Platformer,PlayStation,2020,4,8.2
+Tales of Arise,JRPG,Multi-platform,2021,1,9.0
+Vampire: The Masquerade - Bloodlines 2,Action RPG,Multi-platform,2023,1,8.5
+Warframe,Action,Multi-platform,2013,4,8.7
+Yakuza: Like a Dragon,JRPG,Multi-platform,2020,1,8.9
+Deathloop,First-Person Shooter,Multi-platform,2021,1,8.8
+The Pathless,Action-Adventure,Multi-platform,2020,1,8.5
+12 Minutes,Adventure,Multi-platform,2021,1,8.0
+Biomutant,Action RPG,Multi-platform,2021,1,7.4
+Genshin Impact,Action RPG,Multi-platform,2020,4,9.0

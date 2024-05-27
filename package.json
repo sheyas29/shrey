@@ -1,0 +1,30 @@
+{
+  "name": "your-project",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\" \"npm run start:electron\"",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && node index.js",
+    "start:electron": "cd electron && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "chart.js": "^4.4.3",
+    "chartjs-plugin-zoom": "^2.0.1",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "date-fns": "^3.6.0",
+    "express": "^4.19.2",
+    "express-fileupload": "^1.5.0",
+    "fast-csv": "^5.0.1",
+    "papaparse": "^5.4.1",
+    "react-chartjs-2": "^5.2.0"
+  }
+}
