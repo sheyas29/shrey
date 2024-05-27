@@ -12,12 +12,13 @@ const PORT = 5000;
 
 app.use(cors());
 app.use(fileUpload());
-app.use(express.json());
+app.use(express.json({ limit: '50mb' })); // Increase the payload limit
 
 let uploadedFileName = '';
 let datasetHeaders = [];
 let datasetPath = '';
 let dataset = []; // Store the entire dataset
+let datasets = {}; // Store multiple datasets
 
 app.post('/upload', (req, res) => {
   if (!req.files || Object.keys(req.files).length === 0) {
@@ -56,6 +57,48 @@ app.post('/upload', (req, res) => {
         res.status(500).send(error.message);
       });
   });
+});
+
+app.post('/upload-multiple', (req, res) => {
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
+
+  let fileKeys = Object.keys(req.files);
+  fileKeys.forEach((key) => {
+    const uploadedFile = req.files[key];
+    const uploadPath = `${__dirname}/uploads/${uploadedFile.name}`;
+
+    uploadedFile.mv(uploadPath, (err) => {
+      if (err) {
+        return res.status(500).send(err);
+      }
+
+      let headers = [];
+      let data = [];
+
+      fs.createReadStream(uploadPath)
+        .pipe(csv())
+        .on('headers', (h) => {
+          headers = h;
+        })
+        .on('data', (row) => {
+          data.push(row);
+        })
+        .on('end', () => {
+          datasets[uploadedFile.name] = { headers, data };
+        })
+        .on('error', (error) => {
+          res.status(500).send(error.message);
+        });
+    });
+  });
+
+  res.send('Files uploaded!');
+});
+
+app.get('/datasets', (req, res) => {
+  res.json(datasets);
 });
 
 app.get('/dataset-summary', (req, res) => {
@@ -201,6 +244,30 @@ function generateHistogramData(data, bins) {
   return { labels, histogram };
 }
 
+app.post('/remove-outliers', (req, res) => {
+  const { dataset, attribute } = req.body;
+
+  const attributeIndex = dataset[0].indexOf(attribute);
+  if (attributeIndex === -1) {
+    return res.status(400).send('Attribute not found.');
+  }
+
+  const values = dataset.slice(1).map(row => parseFloat(row[attributeIndex])).filter(value => !isNaN(value));
+  const mean = values.reduce((a, b) => a + b, 0) / values.length;
+  const variance = values.reduce((a, b) => a + (b - mean) ** 2, 0) / values.length;
+  const stdDev = Math.sqrt(variance);
+  const lowerBound = mean - 3 * stdDev;
+  const upperBound = mean + 3 * stdDev;
+
+  const filteredDataset = dataset.filter((row, index) => {
+    if (index === 0) return true; // Keep the header row
+    const value = parseFloat(row[attributeIndex]);
+    return !isNaN(value) && value >= lowerBound && value <= upperBound;
+  });
+
+  res.json(filteredDataset);
+});
+
 app.get('/attribute-details/:attribute', (req, res) => {
   const encodedAttribute = req.params.attribute;
   const attribute = decodeURIComponent(encodedAttribute);
@@ -219,41 +286,61 @@ app.get('/attribute-details/:attribute', (req, res) => {
   });
 });
 
-function removeOutliersUsingIQR(data) {
-  // Assuming data is a list of numeric values
-  const sortedData = [...data].sort((a, b) => a - b);
-  const q1 = sortedData[Math.floor((sortedData.length / 4))];
-  const q3 = sortedData[Math.ceil((sortedData.length * (3 / 4))) - 1];
-  const iqr = q3 - q1;
 
-  const lowerBound = q1 - 1.5 * iqr;
-  const upperBound = q3 + 1.5 * iqr;
+app.post('/upload', (req, res) => {
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
 
-  return data.filter(x => x >= lowerBound && x <= upperBound);
-}
+  const uploadedFile = req.files.file;
+  const datasetName = uploadedFile.name;
 
-app.post('/remove-outliers', (req, res) => {
-  const { dataset } = req.body;
-  const numericColumns = dataset[0].filter(col => detectDataType(dataset.slice(1).map(row => row[col])) === 'Numeric');
-  let updatedDataset = [dataset[0]];
+  if (path.extname(uploadedFile.name) !== '.csv') {
+    return res.status(400).send('Only CSV files are allowed.');
+  }
 
-  dataset.slice(1).forEach(row => {
-    let isOutlier = false;
-    numericColumns.forEach(col => {
-      const value = parseFloat(row[col]);
-      if (!isNaN(value)) {
-        const cleanedData = removeOutliersUsingIQR(dataset.slice(1).map(row => parseFloat(row[col])).filter(val => !isNaN(val)));
-        if (!cleanedData.includes(value)) {
-          isOutlier = true;
-        }
-      }
-    });
-    if (!isOutlier) {
-      updatedDataset.push(row);
+  const uploadPath = `${__dirname}/uploads/${uploadedFile.name}`;
+
+  uploadedFile.mv(uploadPath, (err) => {
+    if (err) {
+      return res.status(500).send(err);
     }
-  });
 
-  res.json(updatedDataset);
+    const dataset = [];
+    fs.createReadStream(uploadPath)
+      .pipe(csv())
+      .on('headers', (headers) => {
+        datasets[datasetName] = { headers, data: [] };
+      })
+      .on('data', (data) => {
+        datasets[datasetName].data.push(data);
+      })
+      .on('end', () => {
+        res.send('File uploaded!');
+      })
+      .on('error', (error) => {
+        res.status(500).send(error.message);
+      });
+  });
+});
+
+app.get('/datasets', (req, res) => {
+  res.json(Object.keys(datasets));
+});
+
+app.delete('/remove-dataset/:name', (req, res) => {
+  const datasetName = req.params.name;
+  if (datasets[datasetName]) {
+    delete datasets[datasetName];
+    fs.unlink(`${__dirname}/uploads/${datasetName}`, (err) => {
+      if (err) {
+        return res.status(500).send('Error deleting file.');
+      }
+      res.send('Dataset removed successfully.');
+    });
+  } else {
+    res.status(400).send('Dataset not found.');
+  }
 });
 
 app.listen(PORT, () => {
