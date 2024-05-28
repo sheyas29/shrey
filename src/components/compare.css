@@ -1,0 +1,62 @@
+.comparison-container {
+    padding: 20px;
+  }
+  
+  .comparison-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .comparison-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .file-input {
+    margin-bottom: 10px;
+  }
+  
+  .upload-button,
+  .compare-button {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .uploaded-datasets,
+  .dataset-upload,
+  .referral-dataset {
+    margin-bottom: 20px;
+  }
+  
+  .dataset-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .dataset-item span {
+    margin-right: 10px;
+  }
+  
+  .remove-dataset-button {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .comparison-error {
+    color: red;
+  }
+  
+  .chart-container {
+    margin-top: 20px;
+    height: 400px;
+  }
+  

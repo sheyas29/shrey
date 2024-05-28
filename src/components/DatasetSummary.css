@@ -1,0 +1,36 @@
+.summary-container {
+    padding: 25px; /* Slightly increased padding for better spacing */
+    border: 1px solid #ddd;
+    border-radius: 15px; /* Slightly larger border radius for a smoother look */
+    background-color: #f9f9fc; /* Lighter, softer background color */
+    margin-bottom: 20px;
+    width: fit-content;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for more depth */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .summary-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  .summary-title {
+    font-size: 26px; /* Slightly larger font size for prominence */
+    font-weight: bold;
+    color: #E57373; /* Soft pink color */
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Slight letter spacing for elegance */
+  }
+  
+  p {
+    font-size: 16px;
+    color: #666; /* Slightly darker gray for better readability */
+    margin: 10px 0; /* Increased margin for better spacing */
+    line-height: 1.6; /* Increased line height for better readability */
+  }
+  
+  strong {
+    color: #333; /* Slightly lighter black for less harsh contrast */
+  }
+  
